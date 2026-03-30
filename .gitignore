@@ -1,16 +1,17 @@
-# Compiled class file
+# =========================
+# Java / Spring Boot
+# =========================
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Build outputs
+target/
+build/
+out/
+.gradle/
+
+# Packaged artifacts
 *.jar
 *.war
 *.nar
@@ -19,6 +20,59 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Keep Maven wrapper jar trackable when present
+!.mvn/wrapper/maven-wrapper.jar
+!**/.mvn/wrapper/maven-wrapper.jar
+
+# JVM crash logs
 hs_err_pid*
 replay_pid*
+
+# =========================
+# Node.js / Vue
+# =========================
+node_modules/
+dist/
+coverage/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment / local config
+# =========================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# =========================
+# IDE / Editor
+# =========================
+.idea/
+*.iml
+.vscode/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
