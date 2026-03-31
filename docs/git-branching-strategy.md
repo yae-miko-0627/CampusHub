@@ -15,12 +15,3 @@
 4. CI 通过 + 代码评审通过后合并
 5. 里程碑版本由 `dev` 合并到 `main`
 
-## Commit Message Convention (建议)
-
-- `feat:` 新功能
-- `fix:` 缺陷修复
-- `docs:` 文档更新
-- `refactor:` 重构
-- `test:` 测试相关
-- `chore:` 构建/依赖/工具维护
-

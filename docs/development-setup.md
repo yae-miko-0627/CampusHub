@@ -50,17 +50,7 @@ npm run build
 npm run lint
 ```
 
-## 5. Node Path (Windows, if npm not found)
-
-如果 `npm -v` 提示命令不存在，可将 Node 安装目录加入系统 `Path`。
-
-示例（你当前环境）：
-
-- `C:\Users\11053\AppData\Roaming\JetBrains\IntelliJIdea2025.2\node\versions\24.14.1`
-
-说明：通常**不需要**额外添加 `...\node_modules\npm\bin` 到系统变量，除非特定工具链明确要求。
-
-## 6. CI Local Parity Checks
+## 5. CI Local Parity Checks
 
 提交前建议本地执行：
 

@@ -28,16 +28,6 @@
 
 ## 4. Git 仓库与分支策略
 
-首次初始化仓库可参考：
-
-```powershell
-git init
-git add .
-git commit -m "chore: initialize CampusHub infrastructure"
-git branch -M main
-git checkout -b dev
-```
-
 关联远程仓库（GitHub/GitLab/Gitee 任一）：
 
 ```powershell
