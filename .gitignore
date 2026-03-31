@@ -1,6 +1,4 @@
-# =========================
-# Java / Spring Boot
-# =========================
+# Java / Spring Boot / Maven
 *.class
 *.ctxt
 .mtj.tmp/
@@ -28,11 +26,10 @@ out/
 hs_err_pid*
 replay_pid*
 
-# =========================
 # Node.js / Vue
-# =========================
 node_modules/
 dist/
+dist-ssr/
 coverage/
 .npm/
 .pnpm-store/
@@ -44,35 +41,38 @@ coverage/
 .parcel-cache/
 .vite/
 *.tsbuildinfo
+*.timestamp-*-*.mjs
+*.local
+.eslintcache
 
-# =========================
 # Logs
-# =========================
 *.log
 logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# =========================
 # Environment / local config
-# =========================
 .env
 .env.*
 !.env.example
 !.env.*.example
 
-# =========================
 # IDE / Editor
-# =========================
 .idea/
 *.iml
 .vscode/
+*.iws
+*.ipr
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# =========================
 # OS files
-# =========================
 .DS_Store
 Thumbs.db
 
