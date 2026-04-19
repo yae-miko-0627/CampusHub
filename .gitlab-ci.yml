@@ -1,0 +1,58 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH =~ /^feature\/.+/)'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev")'
+    - when: never
+
+stages:
+  - build
+  - style
+
+.backend_template:
+  image: maven:3.9.9-eclipse-temurin-17
+  variables:
+    MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  cache:
+    key: "maven-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .m2/repository
+  before_script:
+    - cd backend
+    - chmod +x mvnw
+
+.frontend_template:
+  image: node:20
+  cache:
+    key:
+      files:
+        - frontend/package-lock.json
+    paths:
+      - .npm/
+  before_script:
+    - cd frontend
+    - npm ci --cache $CI_PROJECT_DIR/.npm --prefer-offline
+
+backend_compile:
+  stage: build
+  extends: .backend_template
+  script:
+    - ./mvnw -B -ntp -DskipTests compile
+
+backend_style_check:
+  stage: style
+  extends: .backend_template
+  script:
+    - ./mvnw -B -ntp -DskipTests checkstyle:check
+
+frontend_build:
+  stage: build
+  extends: .frontend_template
+  script:
+    - npm run build
+
+frontend_lint:
+  stage: style
+  extends: .frontend_template
+  script:
+    - npm run lint
+
